@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Home() {
     const navigate = useNavigate();
     const [location, setLocation] = useState('');
-    // const [locationList,setLocationList] = useState([]);
     const { locationList, setLocationList } = useContext(AppContext);
 
     const handleChange = (e) => {
@@ -45,7 +44,7 @@ export default function Home() {
     }
 
     const handleSubmit = (e) => {
-        setLocationList(JSON.parse(localStorage.getItem("LocationList")));
+        localStorage.setItem("locationList", JSON.stringify(locationList))
         console.log('Submit Hit');
         navigate('/map');
     }
