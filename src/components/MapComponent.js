@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet/dist/leaflet.css";
+import markerIcon from '../assets/pinImage.png'
 
 export default function MapComponent({ locations }) {
   const mapRef = useRef(null);
@@ -28,6 +29,16 @@ export default function MapComponent({ locations }) {
       },
       altLineOptions: {
         styles: [{ color: "green", weight: 2 }], // customize the alternative route line style
+      },
+      createMarker: function (i, wp) {
+        // define a custom function to create markers for each waypoint
+        return L.marker(wp.latLng, {
+          icon: L.icon({
+            iconUrl: markerIcon, // use the imported image as the icon url
+            iconSize: [25, 41], // set the icon size
+            iconAnchor: [12.5, 41], // set the icon anchor point
+          }),
+        });
       },
     }).addTo(map);
 
