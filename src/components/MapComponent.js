@@ -78,14 +78,14 @@ export default function MapComponent({ locations }) {
       <div className='next-display-container'>
         <figure class="text-center">
           <blockquote class="blockquote">
-            <p style={{ fontSize: '40px', fontFamily: 'serif' }}>Deliveries</p>
+            <p style={{ fontSize: '40px', fontFamily: 'serif',color :'white' }}>Deliveries</p>
           </blockquote>
         </figure>
         <ul class="list-group">
           {locations.map(data => (
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" />
-              <label class="form-check-label" for="firstCheckbox">{data.DeliveryLocation}</label>
+              <label class="form-check-label" for="firstCheckbox"><h6>{data.DeliveryLocation}</h6></label>
             </li>
           ))}
         </ul>

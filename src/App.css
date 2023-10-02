@@ -8,9 +8,13 @@
   padding: 0;
 }
 
-/* #root{
+#root{
   height: 100vh;
-} */
+}
+
+.app-conatiner{
+  background-image: url("../src/assets/bgImage.jpg")
+}
 
 /* sizing of map container */
 .leaflet-container{
@@ -21,5 +25,4 @@
 .next-display-container{
   width: 20vw;
   padding: 5px 5px 5px 5px;
-  border: 1px solid red;
 }
